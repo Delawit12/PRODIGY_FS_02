@@ -10,12 +10,12 @@ router.use("/register", errorHandler(authController.registerUser));
 // user and admin login
 router.use("/login", errorHandler(authController.login));
 // forget password
-router.use("/login", errorHandler(authController.forgetPassword));
+router.use("/forgetPassword", errorHandler(authController.forgetPassword));
 // confirm otp
-router.use("/login", errorHandler(authController.confirmOTP));
+router.use("/confirmOtp", errorHandler(authController.confirmOTP));
 // resend otp
-router.use("/login", errorHandler(authController.resendOTP));
+router.use("/resendOtp", errorHandler(authController.resendOTP));
 // reset password
-router.use("/login", errorHandler(authController.resetpassword));
+router.use("/resetPassword", errorHandler(authController.resetPassword));
 
 export default router;

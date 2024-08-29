@@ -23,11 +23,12 @@ model User {
   role           Role
   profilePicture String?
   passwordHash   String
+  resetToken     String?
   department     Department?     @relation(fields: [departmentId], references: [id])
   departmentId   Int
   leaveRequests  LeaveRequest[]
   createdAt      DateTime       @default(now())
-  updatedAt      DateTime       @updatedAt
+  updatedAt      DateTime       @default(now())
   
 }
 
@@ -37,7 +38,7 @@ model Department {
   status    Boolean // true for active, false for inactive
   employees User[]
   createdAt      DateTime       @default(now())
-  updatedAt      DateTime       @updatedAt
+  updatedAt      DateTime       @default(now())
 }
 
 model LeaveRequest {
@@ -51,7 +52,7 @@ model LeaveRequest {
   description String
   status      LeaveStatus @default(PENDING)
   createdAt   DateTime    @default(now())
-  updatedAt   DateTime    @updatedAt
+  updatedAt   DateTime    @default(now())
 }
 
 model LeaveType {
