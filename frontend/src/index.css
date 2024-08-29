@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Ensure the background is black for the whole application */
+/* body {
+  @apply bg-black;
+} */
+/* Animated stars background */
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("path_to_your_stars_image") repeat;
+  animation: star-move 100s linear infinite;
+}
+
+@keyframes star-move {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
