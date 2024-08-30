@@ -12,7 +12,6 @@ declare global {
     }
   }
 }
-
 const auth: any = async (req: Request, res: Response, next: NextFunction) => {
   // Check if the authorization header is present and starts with "Bearer"
   if (
@@ -33,7 +32,9 @@ const auth: any = async (req: Request, res: Response, next: NextFunction) => {
   }
   try {
     const payload = jwt.verify(token, JWT_SECRET!) as any; // ! used for non null assertion when we sure the value is non null-able
-    req.id = payload.id;
+
+    req.id = payload.userId;
+
     req.role = payload.role;
 
     next();

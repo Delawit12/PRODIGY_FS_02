@@ -6,16 +6,16 @@ import auth from "../middleware/auth.js";
 const router = Router();
 
 // user registration by
-router.use("/register", errorHandler(authController.registerUser));
+router.post("/register", errorHandler(authController.registerUser));
 // user and admin login
-router.use("/login", errorHandler(authController.login));
+router.post("/login", errorHandler(authController.login));
 // forget password
-router.use("/forgetPassword", errorHandler(authController.forgetPassword));
+router.post("/forgetPassword", errorHandler(authController.forgetPassword));
 // confirm otp
-router.use("/confirmOtp", errorHandler(authController.confirmOTP));
+router.post("/confirmOtp", errorHandler(authController.confirmOTP));
 // resend otp
-router.use("/resendOtp", errorHandler(authController.resendOTP));
+router.post("/resendOtp", errorHandler(authController.resendOTP));
 // reset password
-router.use("/resetPassword", errorHandler(authController.resetPassword));
+router.post("/resetPassword", errorHandler(authController.resetPassword));
 
 export default router;
