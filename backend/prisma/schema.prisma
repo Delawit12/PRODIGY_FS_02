@@ -37,7 +37,7 @@ model User {
 model Department {
   id        Int     @id @default(autoincrement())
   name      String  @unique
-  status    Boolean // true for active, false for inactive
+  status    Status  @default(Active)
   employees User[]
   createdAt      DateTime       @default(now())
   updatedAt      DateTime       @default(now())
