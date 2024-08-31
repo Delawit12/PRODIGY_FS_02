@@ -61,7 +61,7 @@ model LeaveType {
   id            Int            @id @default(autoincrement())
   name          String         @unique
   maxDays       Int // Max number of days allowed
-  status        Boolean // true for active, false for inactive
+  status        Status         @default(Active)// true for active, false for inactive
   leaveRequests LeaveRequest[]
 }
 
