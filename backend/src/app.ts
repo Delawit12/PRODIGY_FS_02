@@ -8,6 +8,7 @@ import dotenv from "dotenv";
 import authRoutes from "./routes/authRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import departmentRoutes from "./routes/departmentRoutes.js";
+import leaveTypeRoutes from "./routes/leaveTypeRoutes.js";
 import leaveRoutes from "./routes/leaveRoutes.js";
 
 // Import Prisma client
@@ -27,6 +28,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/department", departmentRoutes);
+app.use("/api/leaveType", leaveTypeRoutes);
 app.use("/api/leave", leaveRoutes);
 
 // Basic route
