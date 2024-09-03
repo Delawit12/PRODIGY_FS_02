@@ -1,5 +1,6 @@
 import React from "react";
 import company from "../assets/Company-amico.svg";
+import { Link } from "react-router-dom";
 
 const HomePage: React.FC = () => {
   return (
@@ -17,9 +18,12 @@ const HomePage: React.FC = () => {
           <p className="text-lg mb-8">
             Manage and streamline your employee records with ease.
           </p>
-          <button className="bg-teal-500 text-white py-2 px-4 rounded hover:bg-teal-600 transition-transform transform hover:scale-105">
+          <Link
+            to="/login"
+            className="bg-teal-500 text-white py-2 px-4 rounded hover:bg-teal-600 transition-transform transform hover:scale-105"
+          >
             Login
-          </button>
+          </Link>
         </div>
       </main>
     </div>

@@ -7,18 +7,19 @@ export default {
         black: "#000000",
       },
       animation: {
-        pulse: "pulse 2s infinite",
-        bounce: "bounce 1s infinite",
+        "gradient-x": "gradient-x 15s ease infinite",
       },
       keyframes: {
-        pulse: {
-          "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0.5" },
-        },
-        bounce: {
-          "0%, 20%, 50%, 80%, 100%": { transform: "translateY(0)" },
-          "40%": { transform: "translateY(-30px)" },
-          "60%": { transform: "translateY(-15px)" },
+        "gradient-x": {
+          "0%": {
+            backgroundPosition: "0% 0%",
+          },
+          "50%": {
+            backgroundPosition: "100% 0%",
+          },
+          "100%": {
+            backgroundPosition: "0% 0%",
+          },
         },
       },
     },
