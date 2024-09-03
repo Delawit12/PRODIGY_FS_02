@@ -29,6 +29,7 @@ model User {
   department     Department?    @relation(fields: [departmentId], references: [id])
   departmentId   Int
   leaveRequests  LeaveRequest[]
+  notifications  Notification[]
   createdAt      DateTime       @default(now())
   updatedAt      DateTime       @default(now())
   
@@ -63,6 +64,15 @@ model LeaveType {
   maxDays       Int // Max number of days allowed
   status        Status         @default(Active)// true for active, false for inactive
   leaveRequests LeaveRequest[]
+}
+model Notification {
+  id          Int         @id @default(autoincrement())
+  user        User        @relation(fields: [userId], references: [id])
+  userId      Int
+  message     String
+  read        Boolean      @default(false)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @default(now())
 }
 
 enum Role {
